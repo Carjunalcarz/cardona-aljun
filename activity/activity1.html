@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 1</title>
+</head>
+
+<body>
+    <header>
+        <h1 style="color: rgb(255, 81, 0);">Activity</h1>
+        <h2>Welcome to Cafe Delights</h2>
+        <p>your cozy corner for the best coffee and treats in town</p>
+    </header>
+    <main>
+        <section style="padding: 20px;">
+            <h3>Contact Us</h3>
+            <p>We'd love to hear from you! Please fill out the form below:</p>
+            <fieldset>
+                <legend>Personal Information</legend>
+                <form action="">
+
+                    <br>
+                    <label for="name">Name:</label>
+                    <input type="text" name="full-name">
+                    <br>
+                    <label for="name">Email:</label>
+                    <input type="email" name="email">
+                    <br>
+                    <label for="contact">Phone Number :</label>
+                    <input type="number" name="contact" placeholder="123-456-7890">
+                    <br>
+                    <label for="date">Date of Birth</label>
+                    <input type="date">
+            </fieldset>
+
+            <fieldset>
+                <legend> Visit Information</legend>
+
+                <br>
+                <label for="visit">Prefereed Visit Date:</label>
+                <input type="date" name="visit" id="">
+                <br>
+                <label for="time">Preferred Time:</label>
+                <input type="time">
+                <br>
+                <label for="returning">Are you a returning customer</label>
+                <br>
+                <input type="radio" name="returning"> Yes
+                <br>
+                <input type="radio" name="returning"> No
+
+            </fieldset>
+            <br>
+            <h2 style="color: rgb(247, 162, 5);">Activity</h2>
+           <fieldset>
+               <legend>Order Preferences</legend> 
+                <br>
+                <label for="drink">Favorite Drink : </label>
+                <select name="drink" id="">
+                    <option value=";atte">Latte</option>
+                    <option value="kopiko">Kopiko</option>
+                    <option value="nescafe">3 in 1</option>
+                </select>
+                <br>
+                <label for="Preferences">Select your dietary preferences :</label>
+                <br>
+                <input type="checkbox" name="" id="" value="vegan"> Vegan
+                <br>
+                <input type="checkbox" name="" id="" value="Vegetarian"> Vegetarian
+                <br>
+                <input type="checkbox" name="" id="" value="gluten-free"> Gluten Free
+                <br>
+
+            </fieldset>
+
+
+
+           <fieldset>
+            <legend>Feedback</legend>
+                
+                <label for="rating">Rate Your Last Visit(1-5) : </label>
+                <input type="range" min="1" max="5">
+                <br>
+                <label for="comments">Additional Comments:</label>
+                <br>
+                <textarea name="comments" id="" placeholder="Tell us about your experience...">
+                </textarea>
+                <br>
+                <label for="newsletter">Would you like to receive our newsletter ?</label>
+                <input type="checkbox">
+                <br>
+
+            </fieldset>
+            <br>
+            <button type="submit">Submit</button>
+            </form>
+
+        </section>
+
+
+    </main>
+</body>
+
+</html>
