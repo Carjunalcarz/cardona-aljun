@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black; /* Adjust this color as needed */
+}
+
+.header {
+    background-color: rgb(255, 255, 255); /* Sets header to white */
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Softer, visible shadow */
+    padding-bottom: 10px; /* Adds some space below for better shadow visibility */
+}
+.logo , .icon{
+    width: 20%;
+
+}
+.logo, .nav-list, .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.nav-list ul, .icon ul {
+    display: flex;
+    list-style: none; /* Removes bullets from list items */
+}
+
+.nav-list ul li, .icon ul li {
+    margin: 0 10px; /* Adds space between list items */
+}
+
+.icon ul li a {
+    color: black; /* Sets link color to black for visibility on white background */
+}
+
+.content {
+    height: 100vh;
+
+}
+
+.container {
+    padding: 10%;
+  
+    display: flex;
+    gap: 5px;  /* Adds a 5px gap between the flex items */
+}
+.tagline h1{
+    flex:0 0 60% ;
+    font-size: 6vw; 
+    padding-bottom: 20px;
+}
+.tagline p {
+    padding-left: 30px;
+    font-family: Arial, Helvetica, sans-serif; /* Standard system font */
+    font-size: 16px;                          /* Common font size */
+    line-height: 1.5;                         /* Standard line height for readability */
+    color: #000;     
+
+}
+.image-burger{
+    flex: 0 0 40%;
+}
+span {
+    color: rgb(190, 155, 42);
+}
+.btn {
+
+    margin-top: 40px;
+    margin-left: 25px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 11px;
+    background-color: rgb(190, 155, 42);
+}
