@@ -1,57 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recreate the Webpage </title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<!-- Header Section  -->
-<header class="header">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recreate the Webpage</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <!-- Header Section  -->
+  <header class="header" id="header">
     <!-- Navbar  -->
-    <div class="logo"><img src="../Public/image/logo.png" alt="logo" width="100" height="50"></div>
+    <div class="logo">
+      <img src="image/logo.png" alt="logo" width="100" height="50" />
+    </div>
     <div class="nav-list">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#review">Review</a></li>
-            <li><a href="#order">Order</a></li>
-        </ul>
+      <ul>
+        <li><a href="#hero-section">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu-section">Menu</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#review">Review</a></li>
+        <li><a href="#contact-section">Order</a></li>
+      </ul>
     </div>
     <div class="icon">
-        <ul>
-            <li><i class="fa fa-search" aria-hidden="true"></i></li>
-            <li><i class="fa fa-heart" aria-hidden="true"></i></li>
-            <li><i class="fas fa-shopping-cart"></i></li>
-
-        </ul>
-    </div
-    >
-</header>
-<section class="content">
-    <div class="container">
-        <div class="tagline">
-            <h1>Get Fresh <span > Food </span>in a Easy Way</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis vitae sint dicta est ad eius corporis
-                fuga ipsum esse pariatur rerum magni, natus, similique nulla? Eaque iusto reprehenderit tempora saepe?
-                Cumque quis quam, corrupti atque perferendis rerum repudiandae temporibus libero eos tenetur fugiat esse
-                amet necessitatibus commodi cum magni! Sapiente sequi temporibus perspiciatis deleniti excepturi tempora
-                soluta sunt aliquid cum.</p>
-            <button class="btn">Order Now ></button>
-        </div>
-        <div class="image-burger">
-            <img src="../Public/image/main_img.png" alt="burger" width="400px" height="300px">
-        </div>
+      <ul>
+        <li><i class="fa fa-search" aria-hidden="true"></i></li>
+        <li><i class="fa fa-heart" aria-hidden="true"></i></li>
+        <li><i class="fas fa-shopping-cart"></i></li>
+      </ul>
     </div>
+  </header>
+  <section class="content" id="hero-section">
+    <div class="container">
+      <div class="hero">
+        <h1>Get Fresh <span> Food </span>in a Easy Way</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis vitae
+          sint dicta est ad eius corporis fuga ipsum esse pariatur rerum magni,
+          natus, similique nulla? Eaque iusto reprehenderit tempora saepe?
+        </p>
+        <button class="cta-button">Order Now ></button>
+      </div>
+      <div class="image-burger">
+        <img
+          src="image/main_img.png"
+          alt="burger"
+          width="400px"
+          height="300px"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="about-section" id="about">
+    <div class="about-us-image">
+      <img
+        src="image/Food-Plate.png"
+        alt="Food-Plate"
+        width="700px"
+        height="500px"
+      />
+    </div>
+    <div class="about-us">
+      <h2><span>About</span> Us</h2>
+      <h3>Why Choose us?</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non saepe ea
+        est harum ratione iusto debitis! Consequuntur, eius accusantium qui
+        saepe maiores vitae eligendi, quidem, inventore tempora at quis
+      </p>
+      <button class="cta-button">Order Now ></button>
+    </div>
+  </section>
+  
+  <section class="menu-section" id="menu-section">
+    <pre><h2> <span>Our</span> Menu</h2></pre>
+    <div class="menu-container">
+      <div class="menu">
+        <div class="menu-img">
+          <img src="image/buger.jpg" alt="gallary_1" />
+        </div>
+        <div class="menu-content">
+          <h3>Burger</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta</p>
+          <p>$20.00</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <button class="menu-cta-button">Order Now</button>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="menu-img">
+          <img src="image/pasta.jpg" alt="gallary_1" />
+        </div>
+        <div class="menu-content">
+          <h3>Pasta</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta</p>
+          <p>$20.00</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <button class="menu-cta-button">Order Now</button>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="menu-img">
+          <img src="image/lasagna.webp" alt="gallary_1" />
+        </div>
+        <div class="menu-content">
+          <h3>Lasagna</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta</p>
+          <p>$20.00</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <button class="menu-cta-button">Order Now</button>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="menu-img">
+          <img src="image/chocolate.jpg" alt="gallary_1" />
+        </div>
+        <div class="menu-content">
+          <h3>Chocolate</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta</p>
+          <p>$20.00</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <button class="menu-cta-button">Order Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="menu-container">
+      <div class="menu">
+        <div class="menu-img">
+          <img src="image/gallary_5.jpg" alt="gallary_1" />
+        </div>
+        <div class="menu-content">
+          <h3>Pizza</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta</p>
+          <p>$20.00</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <button class="menu-cta-button">Order Now</button>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="menu-img">
+          <img src="image/gallary_6.jpg" alt="gallary_1" />
+        </div>
+        <div class="menu-content">
+          <h3>Cake</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta</p>
+          <p>$20.00</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <button class="menu-cta-button">Order Now</button>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="menu-img">
+          <img src="image/gallary_1.jpg" alt="gallary_1" />
+        </div>
+        <div class="menu-content">
+          <h3>Yummy</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta</p>
+          <p>$20.00</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <button class="menu-cta-button">Order Now</button>
+        </div>
+      </div>
+      <div class="menu">
+        <div class="menu-img">
+          <img src="image/gallary_4.jpg" alt="gallary_1" />
+        </div>
+        <div class="menu-content">
+          <h3>Banana Cake</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta</p>
+          <p>$20.00</p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <button class="menu-cta-button">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <section class="gallery-section" id="gallery">
+    <h2>Our <span>Gallery</span></h2>
+    <div class="gallery-container">
+      <div class="gallery">
+        <img src="image/gallary_1.jpg" alt="" />
+      </div>
+      <div class="gallery">
+        <img src="image/gallary_2.jpg" alt="" />
+      </div>
+      <div class="gallery">
+        <img src="image/gallary_3.jpg" alt="" />
+      </div>
+    </div>
+    <div class="gallery-container">
+      <div class="gallery">
+        <img src="image/gallary_4.jpg" alt="" />
+      </div>
+      <div class="gallery">
+        <img src="image/gallary_5.jpg" alt="" />
+      </div>
+      <div class="gallery">
+        <img src="image/gallary_6.jpg" alt="" />
+      </div>
+    </div>
+  </section>
+  <section class="review-section" id="review">
+    <h2>Customer <span>Review</span></h2>
+    <div class="review-container">
+      <div class="review">
+        <img src="image/review_1.png" alt="" />
+        <h3>John Deo</h3>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+            similique architecto quaerat fugit nemo eius earum neque reiciendis.
+            Rerum eius laudantium illum suscipit officiis necessitatibus
+            doloribus at doloremque possimus aliquid?
+          </p>
+        </div>
+      </div>
+      <div class="review">
+        <img src="image/review_2.png" alt="" />
+        <h3>John Deo</h3>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+            similique architecto quaerat fugit nemo eius earum neque reiciendis.
+            Rerum eius laudantium illum suscipit officiis necessitatibus
+            doloribus at doloremque possimus aliquid?
+          </p>
+        </div>
+      </div>
+      <div class="review">
+        <img src="image/review_3.png" alt="" />
+        <h3>John Deo</h3>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+            similique architecto quaerat fugit nemo eius earum neque reiciendis.
+            Rerum eius laudantium illum suscipit officiis necessitatibus
+            doloribus at doloremque possimus aliquid?
+          </p>
+        </div>
+      </div>
+      <div class="review">
+        <img src="image/review_4.png" alt="" />
+        <h3>John Deo</h3>
+        <div class="rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+            similique architecto quaerat fugit nemo eius earum neque reiciendis.
+            Rerum eius laudantium illum suscipit officiis necessitatibus
+            doloribus at doloremque possimus aliquid?
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="contact-section" id="contact-section">
+    <h2><span>Order</span> Now</h2>
+    <div class="contact-container">
+      <div class="contact-img">
+        <img src="image/order_image.png" alt="" />
+      </div>
 
-<body>
-
-</body>
-
+      <div class="contact-form">
+        <form action="#" method="POST">
+          <div class="form-container">
+            <div class="form-group">
+              <div class="input-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Enter your name"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <label for="name">Email</label>
+                <input
+                  type="email"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="juan@gmail.com"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-container">
+            <div class="form-group">
+              <div class="input-group">
+                <label for="name">Number</label>
+                <input
+                  type="number"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder=""
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <label for="name">How much</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder=""
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-container">
+            <div class="form-group">
+              <div class="input-group">
+                <label for="name">Your Order</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Your Order"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group">
+                <label for="name">Address</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  placeholder="Address"
+                />
+              </div>
+            </div>
+          </div>
+          <button class="cta-button">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="team-section">
+    <h2>Our<span> Team</span></h2>
+    <div class="team">
+      <img src="image/chef1.png" alt="chef1" />
+      <img src="image/chef2.png" alt="chef1" />
+      <img src="image/chef3.jpg" alt="chef1" />
+      <img src="image/chef4.jpg" alt="chef1" />
+    </div>
+  </section>
+  <footer>
+    <div class="ft-container">
+      <div class="ft-div">
+        <h3>Location</h3>
+        <ul>
+          <li>Sri Lanka</li>
+          <li>USA</li>
+          <li>India</li>
+          <li>Japan</li>
+          <li>Italy</li>
+        </ul>
+      </div>
+      <div class="ft-div">
+        <h3>Quick Link</h3>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Menu</li>
+          <li>Gallery</li>
+          <li>Order</li>
+        </ul>
+      </div>
+      <div class="ft-div">
+        <h3>Contact</h3>
+        <ul>
+          <li>+639104422782</li>
+          <li>+639104422782</li>
+          <li>cardona.aljun@gmail.com</li>
+          <li>alcarz.aljun@gmail.com</li>
+        </ul>
+      </div>
+      <div class="ft-div">
+        <h3>Our Service</h3>
+        <ul>
+          <li>Fast Delivery</li>
+          <li>Easy Payments</li>
+          <li>24x7 Service</li>
+        </ul>
+      </div>
+      <div class="ft-div">
+        <h3>Follows</h3>
+        <div class="ft-icon">
+          <i class="fab fa-twitter"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-linkedin"></i>
+        </div>
+      </div>
+    </div>
+    <div class="tm">
+      <h3>Design by <span><i class="fa-solid fa-face-smile"></i>Alcarz</h3></span>
+    </div>
+  </footer>
+ </body>
 </html>

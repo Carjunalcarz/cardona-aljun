@@ -1,84 +1,344 @@
-* {
+:root {
+    --primary-color: #fcbb08; /* Main brand color */
+    --secondary-color: #f7cc0dec; /* Secondary accent color */
+    --background-color: #000000; /* Background color */
+    --text-color: #333333; /* Main text color */
+    --error-color: #e74c3c; /* Error or alert color */
+  }
+  
+  * {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     box-sizing: border-box;
-}
-
-a {
+  }
+  
+  a {
     text-decoration: none;
     color: black; /* Adjust this color as needed */
-}
-
-.header {
+  }
+  
+  .header {
+    position: sticky;
+    top: 0; /* Sticks the element to the top of the viewport */
+    z-index: 10; /* Optional: ensures the sticky element appears above others */
     background-color: rgb(255, 255, 255); /* Sets header to white */
     display: flex;
     justify-content: space-between;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Softer, visible shadow */
     padding-bottom: 10px; /* Adds some space below for better shadow visibility */
-}
-.logo , .icon{
+  }
+  .logo,
+  .icon {
     width: 20%;
-
-}
-.logo, .nav-list, .icon {
+  }
+  .logo,
+  .nav-list,
+  .icon {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 10vh;
-}
-
-.nav-list ul, .icon ul {
+  }
+  
+  .nav-list ul,
+  .icon ul {
     display: flex;
     list-style: none; /* Removes bullets from list items */
-}
-
-.nav-list ul li, .icon ul li {
-    margin: 0 10px; /* Adds space between list items */
-}
-
-.icon ul li a {
-    color: black; /* Sets link color to black for visibility on white background */
-}
-
-.content {
-    height: 100vh;
-
-}
-
-.container {
-    padding: 10%;
+  }
   
+  .nav-list ul li,
+  .icon ul li {
+    margin: 0 10px; /* Adds space between list items */
+  }
+  
+  .icon ul li a {
+    color: black; /* Sets link color to black for visibility on white background */
+  }
+  
+  .hero {
+    height: 100vh;
+  }
+  
+  .container {
+    padding: 10%;
     display: flex;
-    gap: 5px;  /* Adds a 5px gap between the flex items */
-}
-.tagline h1{
-    flex:0 0 60% ;
-    font-size: 6vw; 
+    gap: 5px; /* Adds a 5px gap between the flex items */
+    height: 700px;
+  }
+  .hero h1 {
+    flex: 0 0 60%;
+    font-size: 6vw;
     padding-bottom: 20px;
-}
-.tagline p {
+  }
+  .hero p {
     padding-left: 30px;
     font-family: Arial, Helvetica, sans-serif; /* Standard system font */
-    font-size: 16px;                          /* Common font size */
-    line-height: 1.5;                         /* Standard line height for readability */
-    color: #000;     
-
-}
-.image-burger{
+    font-size: 16px; /* Common font size */
+    line-height: 1.5; /* Standard line height for readability */
+    color: #000;
+  }
+  .image-burger {
     flex: 0 0 40%;
-}
-span {
-    color: rgb(190, 155, 42);
-}
-.btn {
-
+  }
+  span {
+    color: var(--primary-color);
+  }
+  .cta-button {
+    cursor: pointer;
+    line-height: 1.5;
+    width: 120px;
     margin-top: 40px;
     margin-left: 25px;
     color: white;
     border-radius: 5px;
     border: none;
     padding: 10px;
-    font-size: 11px;
-    background-color: rgb(190, 155, 42);
-}
+    font-size: 16px;
+    background-color: var(--primary-color);
+  }
+  .cta-button:hover {
+    background-color: var(--secondary-color);
+    transition: 0.4s;
+  }
+  .about-section {
+    padding: 20px 10px;
+    display: flex;
+  }
+  .about-us-image {
+    display: flex;
+    align-items: center;
+    width: 50%;
+  }
+  .about-us {
+    padding: 10px;
+    line-height: 1.5;
+    width: 50%;
+  }
+  .about-us h2 {
+    padding-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+  .about-us h3 {
+    padding-bottom: 20px;
+  }
+  .about-us span {
+    color: var(--primary-color);
+  }
+  .menu-section h2 {
+    margin-top: 20px;
+    font-size: 40px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 20px;
+  }
+  .menu {
+    padding: 10px 3px;
+    margin: 10px;
+    text-align: center;
+    width: 20%;
+    background-color: white;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  .menu:hover{
+      margin: 20px;
+  }
+  .menu img {
+   
+    padding: 3px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+  .menu content {
+    padding: 20px;
+  }
+  .menu h3 {
+    color: var(--primary-color);
+  }
+  .menu p {
+    font-size: 14px;
+    line-height: 1;
+    padding: 10px;
+    font-weight: bold;
+  }
+  .menu-cta-button {
+    cursor: pointer;
+    line-height: 1.5;
+    width: 120px;
+    margin-top: 40px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    background-color: var(--background-color);
+  }
+  .menu-cta-button:hover {
+    background-color: var(--secondary-color);
+    transition: 0.4s;
+  }
+  .menu i {
+      color: var(--primary-color);
+  }
+  .gallery-section h2 {   
+      justify-content: center;
+      text-align: center;
+      font-size: 40px;
+      padding: 20px;
+  }
+  .gallery-container {
+      display: flex;
+      justify-content: center;
+  }
+  .gallery img {
+      
+      width: 400px;
+      height: 350px;
+      padding: 2px;
+  }
+  .review-section h2 {
+      text-align: center;
+      font-size: 40px;
+      padding: 50px;
+  }
+  .review-container {
+      display: flex;
+      justify-content: center;
+    
+  }
+  .review {
+      display: flex;
+      flex-direction: column;  /* Stack items vertically */
+      align-items: center;     /* Horizontally center the items */
+      justify-content: center; /* Vertically center the items */
+      text-align: center;      /* Ensure text is centered */
+      padding: 20px;
+      border: 1px solid #ddd;  /* Optional border for styling */
+      max-width: 400px;        /* Optional, limits width */
+      margin: 2px;          /* Center the review box horizontally on the page */
+    }
+  .review:hover{
+      margin: 5px;
+  }
+  .review img {
+      align-items: center;
+      
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+  }
+  .review p {
+      line-height: 1.5;
+     
+  }
+  .rating i {
+      color: var(--primary-color);
+  }
+  .contact-section{
+    
+      padding: 50px;
+      font-size: 30px;
+      text-align: center;
+  }
+  .contact-container{
+      display: flex;
+      justify-content: center;
+  }
+  .contact-img{
+      width: 50%;
+  }
+  .contact-img img{
+      width: 50%;
+  }
+  .form-container {
+      padding:  0 20px;
+      display: flex;
+      flex-direction: row;
+  }
+  .input-group{
+      padding: 0 10px;
+      font-size: 20px;
+      display:flex ;
+      flex-direction: column;
+      align-items: start;
+  }
+  .input-group label {
+      color: #928686;
+      padding: 10px;
+      font-family: sans-serif;
+      font-size: 12px;
+  }
+  .input-group input {
+      padding: 10px;
+      text-align: start;
+      height: 40px;
+      color: #928888;
+      border:solid 1px;
+      border-radius: 5px;
+  }
+   .team-section{
+      background-image: url(image/bg1.jpg);
+      margin-top: 70px;
+      justify-self: center;
+    }
+  .team {
+      display: flex;
+      padding: 40px;
+  }
+    .team-section h2 {
+      text-align: center;
+      font-size: 40px;
+    }
+    .team img {
+      color: #928686;
+      margin: 5px;
+      border-radius: 50%;
+      padding: 20px;
+      width: 250px;
+      height: 260px;
+      border: solid 1px;
+    }
+    .ft-container{
+      display: flex;
+      
+    }
+    .ft-div{
+      padding: 20px;
+      background-color: rgba(245, 245, 206, 0.795);
+      width: 100%;
+      height: 200px;
+      text-align: center;
+    }
+    .ft-div li{
+      color: rgb(103, 109, 114);
+      margin-top: 6px;
+      font-size: 14px;
+      padding:2px;
+      list-style-type: none;
+    }
+    .ft-div h3 {
+      color: #444040;
+    }
+    .ft-icon ul {
+      display: flex;
+      flex-direction: column;
+    }
+    .tm {
+      padding: 20px;
+      color: #928686;
+      font-size: 12px;
+      background-color:   rgba(245, 245, 206, 0.795);
+      text-align: center;
+    }
+    .tm span {
+      color: var(--primary-color);
+    }
