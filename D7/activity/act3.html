@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity 3 Shopping Cart</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <div>
+    <div class="container col-6 mt-5">
+        <h1 class="bg-primary bg-gradient text-white rounded-3 text-center p-2" style="width: 300px;">Shopping Cart</h1>
+    </div>
+        <div class="container  p-5">
+                <div class="card p-3">
+                    <h2>Your Cart : </h2>
+                    <div class="item border d-flex justify-content-start" >
+                        <ul class="list-group" id="cart">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container  p-5">
+            <div class="card p-3">
+                <h2>Product : </h2>
+                <div class="item border d-flex justify-content-start" >
+                    <ul class="list-group" id="product">
+                        <li class="list-group-item">Product 1 Price : $10 <button  class="btn btn-primary" data-name="Apple" data-price="10">Add to Cart</button></li>
+                        <li class="list-group-item">Product 2 Price : $30 <button class="btn btn-primary" data-name="Orange" data-price="50">Add to Cart</button></li>
+                        <li class="list-group-item">Product 3 Price : $100 <button class="btn btn-primary" data-name="Banana" data-price="20">Add to Cart</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer m-5"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script3.js"></script>
+  </body>
+</html>
