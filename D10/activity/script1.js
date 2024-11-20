@@ -77,10 +77,9 @@ document.getElementById("bookForm").addEventListener("submit", function (e) {
   const bookTitle = document.getElementById("bookTitle").value;
   const bookAuthor = document.getElementById("bookAuthor").value;
   const bookGenre = document.getElementById("bookGenre").value;
+  const librarySelect = document.getElementById("library_header").textContent.toLowerCase();
 
-  // libraries[libraryName].addBook(bookTitle , bookAuthor , bookGenre , true);
-
-  libraries.libraryName.addBook(bookTitle , bookAuthor , bookGenre , true)
-  console.log(libraries.libraryName);
+  // libraries.libraryName.addBook(bookTitle , bookAuthor , bookGenre , true)
+  console.log(librarySelect);
 
 });
