@@ -1,0 +1,378 @@
+Retrieve all courses in the "Programming" category.
+    db.courses.find({ category: ObjectId('673f148ad6ebe5ea3613aeb6') })
+
+    Result : 
+    {
+    _id: ObjectId('673ec78c1b54f1e8c81b473e'),
+    title: 'Introduction to MongoDB',
+    description: 'Learn the basics of MongoDB.',
+    category: ObjectId('673f148ad6ebe5ea3613aeb6'),
+    instructor: ObjectId('673ec6301b54f1e8c81b4731'),
+    students: [
+        ObjectId('673ec2d71b54f1e8c81b4714'),
+        ObjectId('673ec2d71b54f1e8c81b4715')
+    ],
+    reviews: [
+        {
+        rating: 5,
+        comment: 'Great course!',
+        student: ObjectId('673ec2d71b54f1e8c81b4714')
+        },
+        {
+        rating: 4,
+        comment: 'Very informative.',
+        student: ObjectId('673ec2d71b54f1e8c81b4715')
+        }
+    ]
+    }
+Retrieve all students enrolled in the course "Introduction to MongoDB".
+   db.courses.find(
+  { title: "Introduction to MongoDB" },
+  { students: 1, _id: 0 }
+)
+    
+Result : 
+{
+  students: [
+    ObjectId('673ec2d71b54f1e8c81b4714'),
+    ObjectId('673ec2d71b54f1e8c81b4715')
+  ]
+}
+
+
+db.courses.aggregate([
+  { $match: { title: "Introduction to MongoDB" } }, // Match the course
+  {
+    $lookup: {
+      from: "students",          // Join with the `students` collection
+      localField: "students",    // Match the `students` field in the `courses` collection
+      foreignField: "_id",       // Match it with the `_id` field in the `students` collection
+      as: "student_details"      // Output the matched documents as `student_details`
+    }
+  },
+  {
+    $project: {
+      _id: 0,                      // Exclude `_id`
+      "students": "$student_details.name" // Replace `students` with only the `name` field from `student_details`
+    }
+  }
+]);
+
+Result :
+        {
+        students: [
+            'Alice Johnson',
+            'Bob Brown'
+        ]
+        }
+
+
+
+Retrieve course details, including category and instructor information, for all courses.
+
+db.courses.aggregate([
+  {
+    $lookup: {
+      from: "categories",          // Join with the categories collection
+      localField: "category",      // Match the category field in courses
+      foreignField: "_id",         // Match it with the _id field in categories
+      as: "category_details"       // Output the joined data as category_details
+    }
+  },
+  {
+    $lookup: {
+      from: "instructors",         // Join with the instructors collection
+      localField: "instructor",    // Match the instructor field in courses
+      foreignField: "_id",         // Match it with the _id field in instructors
+      as: "instructor_details"     // Output the joined data as instructor_details
+    }
+  },
+  {
+    $project: {
+      _id: 0,                      // Exclude the _id field
+      title: 1,                    // Include the title field
+      description: 1,              // Include the description field
+      "category_details.name": 1,  // Include only the category name
+      "instructor_details.name": 1,// Include only the instructor name
+      "instructor_details.email": 1// Include the instructor email
+    }
+  }
+]);
+
+Result : 
+{
+  title: 'Introduction to MongoDB',
+  description: 'Learn the basics of MongoDB.',
+  category_details: [
+    {
+      name: 'Programming'
+    }
+  ],
+  instructor_details: [
+    {
+      name: 'John Smith',
+      email: 'john.smith@example.com'
+    }
+  ]
+}
+
+{
+  title: 'Data Science with Python',
+  description: 'A comprehensive guide to data science using Python.',
+  category_details: [
+    {
+      name: 'Data Science'
+    }
+  ],
+  instructor_details: [
+    {
+      name: 'John Smith',
+      email: 'john.smith@example.com'
+    }
+  ]
+}
+
+Retrieve all reviews for the course "Data Science with Python," including the details of the students who wrote them.
+
+db.courses.aggregate([
+  { $match: { title: "Data Science with Python" } }, // Match the course by title
+  {
+    $unwind: "$reviews" // Unwind the reviews array to process each review individually
+  },
+  {
+    $lookup: {
+      from: "students",              // Join with the students collection
+      localField: "reviews.student", // Match the student field in reviews
+      foreignField: "_id",           // Match it with the _id field in students
+      as: "student_details"          // Output the matched student details
+    }
+  },
+  {
+    $project: {
+      _id: 0,                        // Exclude the _id field
+      "reviews.rating": 1,           // Include the review rating
+      "reviews.comment": 1,          // Include the review comment
+      "student_details.name": 1,     // Include the student's name
+      "student_details.email": 1     // Include the student's email
+    }
+  }
+]);
+Result : 
+{
+  reviews: {
+    rating: 4,
+    comment: 'Good introduction.'
+  },
+  student_details: [
+    {
+      name: 'Charlie White',
+      email: 'charlie.w@example.com'
+    }
+  ]
+}
+Find the average rating for each course.
+
+db.courses.aggregate([
+  { $unwind: "$reviews" }, // Unwind the reviews array to process each review individually
+  {
+    $group: {
+      _id: "$title",                  // Group by the course title
+      averageRating: { $avg: "$reviews.rating" } // Calculate the average rating for each course
+    }
+  },
+  {
+    $project: {
+      _id: 0,                         // Exclude the _id field
+      title: "$_id",                  // Rename `_id` to `title`
+      averageRating: 1                // Include the average rating
+    }
+  }
+]);
+
+Result : 
+{
+  averageRating: 4.5,
+  title: 'Introduction to MongoDB'
+}
+{
+  averageRating: 4,
+  title: 'Data Science with Python'
+}
+Retrieve all courses taught by the instructor "Jane Doe".
+db.courses.aggregate([
+  {
+    $lookup: {
+      from: "instructors",       // Join with the instructors collection
+      localField: "instructor",  // Match the instructor field in courses
+      foreignField: "_id",       // Match it with the _id field in instructors
+      as: "instructor_details"   // Output the matched instructor details
+    }
+  },
+  {
+    $match: {
+      "instructor_details.name": "Jane Doe" // Filter by instructor name
+    }
+  },
+  {
+    $project: {
+      _id: 0,                    // Exclude the _id field
+      title: 1,                  // Include the course title
+      "instructor_details.name": 1 // Include the instructor name
+    }
+  }
+]);
+Result : 
+{
+  title: 'Data Science with Python',
+  instructor_details: [
+    {
+      name: 'Jane Doe'
+    }
+  ]
+}
+Count the number of courses in each category.
+db.courses.aggregate([
+  {
+    $group: {
+      _id: "$category",           // Group by the category field
+      courseCount: { $sum: 1 }    // Count the number of courses in each category
+    }
+  },
+  {
+    $project: {
+      _id: 0,                     // Exclude the _id field
+      category: "$_id",           // Rename `_id` to `category`
+      courseCount: 1              // Include the course count
+    }
+  }
+]);
+
+Result : {
+  courseCount: 1,
+  category: ObjectId('673f148ad6ebe5ea3613aeb6')
+}
+{
+  courseCount: 1,
+  category: ObjectId('673f148ad6ebe5ea3613aeb7')
+}
+
+
+Find all students who have reviewed the course "Introduction to MongoDB".
+db.courses.aggregate([
+  {
+    $match: { title: "Introduction to MongoDB" } // Match the course by title
+  },
+  {
+    $unwind: "$reviews" // Unwind the reviews array to process each review
+  },
+  {
+    $lookup: {
+      from: "students",       // Join with the students collection
+      localField: "reviews.student", // Match the student field in reviews
+      foreignField: "_id",    // Match with the _id in students
+      as: "student_details"   // Include the matched student details
+    }
+  },
+  {
+    $project: {
+      _id: 0,                 // Exclude the _id field
+      "student_details.name": 1 // Include only the student's name
+    }
+  }
+]);
+
+Result : 
+{
+  student_details: [
+    {
+      name: 'Alice Johnson'
+    }
+  ]
+}
+{
+  student_details: [
+    {
+      name: 'Bob Brown'
+    }
+  ]
+}
+Retrieve the titles of all courses where the average rating is above 4.
+
+db.courses.aggregate([
+  {
+    $unwind: "$reviews" // Unwind the reviews array to process each review
+  },
+  {
+    $group: {
+      _id: "$title",                         // Group by course title
+      averageRating: { $avg: "$reviews.rating" } // Calculate the average rating for each course
+    }
+  },
+  {
+    $match: { averageRating: { $gt: 4 } } // Filter courses where the average rating is greater than 4
+  },
+  {
+    $project: {
+      _id: 0,          // Exclude the _id field
+      title: "$_id"    // Include the course title
+    }
+  }
+]);
+
+Result : 
+{
+  title: 'Introduction to MongoDB'
+}
+Retrieve all students who are enrolled in courses taught by "John Smith".
+
+db.courses.aggregate([
+  {
+    $lookup: {
+      from: "instructors",         // Join with the instructors collection
+      localField: "instructor",    // Match instructor in courses
+      foreignField: "_id",         // Match _id in instructors
+      as: "instructor_details"     // Include matched instructor details
+    }
+  },
+  {
+    $unwind: "$instructor_details"  // Unwind to access instructor details
+  },
+  {
+    $match: {
+      "instructor_details.name": "John Smith" // Filter by instructor name
+    }
+  },
+  {
+    $unwind: "$students"          // Unwind the students array
+  },
+  {
+    $lookup: {
+      from: "students",            // Join with the students collection
+      localField: "students",      // Match student IDs from courses
+      foreignField: "_id",         // Match _id in students
+      as: "student_details"        // Include matched student details
+    }
+  },
+  {
+    $project: {
+      _id: 0,                       // Exclude the _id field
+      "student_details.name": 1     // Include only student names
+    }
+  }
+]);
+Result : 
+
+{
+  student_details: [
+    {
+      name: 'Alice Johnson'
+    }
+  ]
+}
+{
+  student_details: [
+    {
+      name: 'Bob Brown'
+    }
+  ]
+}
