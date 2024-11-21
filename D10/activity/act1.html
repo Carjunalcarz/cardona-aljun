@@ -34,7 +34,7 @@
         <!-- Form to add a book -->
   
 
-        <form id="bookForm" class="mb-4">
+        <form id="bookForm" class="mb-4 d-none">
           <div class="mb-3">
             <label for="bookTitle" class="form-label">Book Title</label>
             <input
@@ -69,35 +69,36 @@
         </form>
       </div>
       <!-- Display Libraries and Books -->
+       <div class="container" id="bookList"></div>
       <div class="container">
         <table class="table">
             <thead class="bg-dark text-white">
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Title</th>
+                <th scope="col">Athor</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Borrowed</th>
+
               </tr>
             </thead>
-            <tbody>
+            <tbody id="book_table">
+             
+            </tbody>
+          </table>
+        <table class="table">
+            <thead class="bg-dark text-white">
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="col">#</th>
+                <th scope="col">Title</th>
+                <th scope="col">Athor</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Borrowed</th>
+
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
+            </thead>
+            <tbody id="borrowed_table">
+             
             </tbody>
           </table>
       </div>
