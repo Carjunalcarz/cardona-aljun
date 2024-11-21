@@ -1,0 +1,97 @@
+// Step 1: Create a new MongoDB Atlas cluster and connect to it using MongoDB Compass .
+
+// Step 2: In MongoDB Compass, create a new database called "Bookstore" and a collection called "Books".
+
+// Step 3: Perform the following CRUD operations using MongoDB Compass:
+
+// a) Create Operation:
+// Insert at least three book documents with different fields such as title, author, genre, and publication year.
+db.books.insertMany([
+  {
+    title: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    genre: "Fiction",
+    publication_year: 1960
+  },
+  {
+    title: "1984",
+    author: "George Orwell",
+    genre: "Dystopian",
+    publication_year: 1949
+  },
+  {
+    title: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    genre: "Classic",
+    publication_year: 1925
+  }
+]);
+
+
+
+
+// b) Read Operation:
+// Retrieve all the book documents in the "Books" collection.
+// Verify that the documents were inserted
+db.books.find().pretty();
+{
+  _id: ObjectId('673ea71d0b3b99d7c2e2f875'),
+  title: 'To Kill a Mockingbird',
+  author: 'Harper Lee',
+  genre: 'Fiction',
+  publication_year: 1960
+}
+{
+  _id: ObjectId('673ea71d0b3b99d7c2e2f876'),
+  title: '1984',
+  author: 'George Orwell',
+  genre: 'Dystopian',
+  publication_year: 1949
+}
+// Retrieve a specific book document based on its title or author.
+db.books.findOne({ title: "1984" });
+{
+  _id: ObjectId('673ea71d0b3b99d7c2e2f876'),
+  title: '1984',
+  author: 'George Orwell',
+  genre: 'Dystopian',
+  publication_year: 1949
+}
+// c) Update Operation:
+// Update the genre of a book document.
+db.books.updateOne(
+  { title: "1984" },  // Filter to find the document
+  { $set: { genre: "Science Fiction" } }  // Update operation: set the new genre
+);
+db.books.updateOne(
+  { title: "1984" },  // Filter to find the document
+  { $set: { genre: "Science Fiction" } }  // Update operation: set the new genre
+);
+
+// Update the publication year of a book document.
+db.books.updateOne(
+  { title: "1984" },  // Filter to find the document
+  { $set: { publication_year: 1950 } }  // Update operation: set the new publication year
+);
+db.books.updateOne(
+  { title: "1984" },  // Filter to find the document
+  { $set: { publication_year: 1950 } }  // Update operation: set the new publication year
+);
+
+// d) Delete Operation:
+// Delete a book document based on its title or author.
+// Delete the book by author "Harper Lee"
+db.books.deleteOne(
+  { author: "Harper Lee" }  // Filter to find the document
+);
+
+// Delete the book by author "Harper Lee"
+db.books.deleteOne(
+  { author: "Harper Lee" }  // Filter to find the document
+);
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+
+// Step 4: After each operation, verify the changes by re-reading the data from the "Books" collection.
