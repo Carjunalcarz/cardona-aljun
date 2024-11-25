@@ -1,0 +1,42 @@
+npm install express
+pm install mongoose
+npm install bcryptjs
+Alan Beraquit
+9:39 PM
+npm install jsonwebtoken
+npm install dotenv
+Neil Bryan Apostol
+9:40 PM
+nodemon
+Gabriel Malanday
+9:40 PM
+cors
+PORT=3000
+MONGODB_URI=<your MongoDB Atlas connection string>
+JWT_SECRET=<your JWT secret key>
+
+const express = require('express');
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+onst userSchema = new mongoose.Schema({
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    trim: true
+  },
+  password: {
+    type: String,
+    required: true,
+    trim: true
+  }
+});
+
+module.exports = mongoose.model('User', userSchema);
