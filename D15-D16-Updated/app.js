@@ -6,6 +6,8 @@ import cors from "cors";
 // Import Routes
 import authRoutes from "./routes/authRoutes.js";
 import blogRoutes from "./routes/blogRoutes.js";
+import commentRoutes from "./routes/commentRoutes.js";
+
 
 // Load environment variables
 dotenv.config();
@@ -18,6 +20,9 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/blogs", blogRoutes);
+app.use("/api/comments", commentRoutes);
+app.use("/api/blogs/:blogId/comments/:id", commentRoutes);
+
 
 // MongoDB connection
 const connectToDatabase = async () => {
